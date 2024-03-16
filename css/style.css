@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  font-family: "Work Sans", sans-serif;
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+}
+
+body {
+  background: var(--Light-pink);
+}
+main {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main::before {
+  content: "";
+  position: fixed;
+  background-image: url(../faq-accordion-main/assets/images/background-pattern-desktop.svg);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+}
+p {
+  font-size: 16px;
+}
+
+.card {
+  width: 650px;
+  position: relative;
+  background: var(--White);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px var(--Grayish-purple);
+}
+.card header {
+  display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.card header h1 {
+  color: var(--Dark-purple);
+    font-weight: 600;
+    font-size: 45px;
+}
+
+.card-content #click {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.card-content #click h2 {
+  font-weight: 600;
+  color: var(--Dark-purple);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.card-content #click h2:hover {
+  color: hsl(281deg 83% 54%);
+  cursor: pointer;
+}
+
+.card-content {
+  padding: 10px 0;
+}
+.card-content p {
+  color: var(--Grayish-purple);
+  line-height: 1.3;
+  display: none;
+}
+.card-content:not(:last-of-type){
+  border-bottom: 1px solid var(--Light-pink);
+  padding: 10px 0;
+}
+
+.card-content p.open {
+  display: block;
+}
